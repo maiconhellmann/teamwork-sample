@@ -24,6 +24,7 @@ class ProjectDetailPresenter(val dataManager: DataManager): ProjectDetailContrac
         starSubscription?.unsubscribe()
 
         project.id?.let {
+            view.showProgressIndicator()
             if (project.starred == true) {
                 unstarProject(project)
             } else {
