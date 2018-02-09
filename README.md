@@ -5,6 +5,8 @@
 ![](https://github.com/maiconhellmann/teamwork-sample/blob/master/images/ss01.jpg)
 ![](https://github.com/maiconhellmann/teamwork-sample/blob/master/images/ss02.jpg)
 
+## Download apk
+[Teamwork sample app](https://github.com/maiconhellmann/teamwork-sample/blob/master/app/release/app-debug.apk?raw=true)
 
 ## Architecture
 Libraries and tools included:
