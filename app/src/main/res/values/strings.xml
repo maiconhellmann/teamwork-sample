@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Teamwork</string>
+    <string name="wait">Wait …</string>
+
+    <!-- Project list -->
+    <string name="results_found">%1$d results</string>
+    <string name="no_result">No results</string>
+    <string name="description">Description</string>
+    <string name="projects">Projects</string>
+    <string name="dates">Dates</string>
+    <string name="date_range">%1$s - %2$s</string>
+    <string name="no_result_found">No results found</string>
+</resources>
