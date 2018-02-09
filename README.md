@@ -1,8 +1,11 @@
 # README
 
 ## Screenshots
+
+Project list:
 ![](https://github.com/maiconhellmann/teamwork-sample/blob/master/images/ss01.png)
 
+Project detail:
 ![](https://github.com/maiconhellmann/teamwork-sample/blob/master/images/ss02.jpg)
 
 
