@@ -8,6 +8,8 @@ import com.teamwork.sample.maicon.R
 import com.teamwork.sample.maicon.data.model.Project
 import com.teamwork.sample.maicon.ui.ViewConstants
 import com.teamwork.sample.maicon.ui.base.BaseActivity
+import com.teamwork.sample.maicon.ui.base.BasePresenter
+import com.teamwork.sample.maicon.ui.base.MvpView
 import com.teamwork.sample.maicon.util.GlideApp
 import com.teamwork.sample.maicon.util.extension.formatToViewDateDefaults
 import kotlinx.android.synthetic.main.activity_project_detail.*
@@ -95,5 +97,9 @@ class ProjectDetailActivity: BaseActivity(), ProjectDetailContract.View {
         }else{
             fabStarred.setImageResource(R.drawable.ic_star_white_24dp)
         }
+    }
+
+    override fun getPresenter(): BasePresenter<out MvpView>? {
+        return presenter
     }
 }
