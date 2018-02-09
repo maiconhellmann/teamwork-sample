@@ -3,19 +3,22 @@ package com.teamwork.sample.maicon.data.model
 import android.os.Parcel
 import android.os.Parcelable
 
-class Category : Parcelable {
-    var name: String? = null
+class Category(
+        var name: String? = null,
+        var id: String? = null
 
-    var id: String? = null
-
+) : Parcelable {
     constructor(source: Parcel) : this(
+            source.readString(),
+            source.readString()
     )
-
-    constructor()
 
     override fun describeContents() = 0
 
-    override fun writeToParcel(dest: Parcel, flags: Int) = with(dest) {}
+    override fun writeToParcel(dest: Parcel, flags: Int) = with(dest) {
+        writeString(name)
+        writeString(id)
+    }
 
     companion object {
         @JvmField

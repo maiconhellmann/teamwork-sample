@@ -186,7 +186,7 @@ open class BaseActivity: AppCompatActivity() {
 
     open fun getPresenter(): BasePresenter<out com.teamwork.sample.maicon.ui.base.MvpView>? = null
 
-    fun replaceFragment(fragment: BaseFragment, addToBackStack: Boolean?= false){
+    fun replaceFragment(fragment: BaseFragment, @Suppress("UNUSED_PARAMETER") addToBackStack: Boolean?= false){
         performNoBackStackTransaction(fragment)
     }
 

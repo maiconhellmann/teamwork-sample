@@ -7,7 +7,6 @@ import android.support.design.widget.TextInputEditText
 import android.support.design.widget.TextInputLayout
 import android.view.View
 import android.widget.FrameLayout
-import com.github.clans.fab.FloatingActionMenu
 import timber.log.Timber
 
 fun View.visible(){
@@ -46,13 +45,6 @@ fun View.snackbar(msg: String, duration: Int = Snackbar.LENGTH_SHORT) {
 }
 fun View.longSnackbar(resId: Int) {
     snackbar(resId, Snackbar.LENGTH_LONG)
-}
-
-fun FloatingActionMenu.show(){
-    this.showMenu(true)
-}
-fun FloatingActionMenu.hide(){
-    this.hideMenu(true)
 }
 
 fun TextInputEditText.setTextEx(text: CharSequence?){
