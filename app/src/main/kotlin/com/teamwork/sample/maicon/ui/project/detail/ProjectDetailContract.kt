@@ -10,10 +10,12 @@ import com.teamwork.sample.maicon.ui.base.MvpView
 class ProjectDetailContract {
     interface View: MvpView{
         fun refreshView()
-
+        fun setProject(project: Project)
+        fun refreshStar()
     }
 
     abstract class Presenter: BasePresenter<View>(){
         abstract fun onOpen(project: Project)
+        abstract fun onClickStar(project: Project)
     }
 }

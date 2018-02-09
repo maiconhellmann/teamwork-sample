@@ -1,8 +1,10 @@
 package com.teamwork.sample.maicon.ui.project.list
 
+import android.content.Intent
 import android.os.Bundle
 import com.teamwork.sample.maicon.R
 import com.teamwork.sample.maicon.data.model.Project
+import com.teamwork.sample.maicon.ui.ViewConstants
 import com.teamwork.sample.maicon.ui.base.BaseActivity
 import com.teamwork.sample.maicon.ui.base.BasePresenter
 import com.teamwork.sample.maicon.ui.base.MvpView
@@ -50,10 +52,18 @@ class ProjectListActivity : BaseActivity(), ProjectListContract.View {
     }
 
     override fun showProjectDetails(project: Project) {
-        startActivity(ProjectDetailActivity.getIntent(this, project))
+        startActivityForResult(ProjectDetailActivity.getIntent(this, project), ViewConstants.REQUES_CODE_DETAIL)
     }
 
     override fun getPresenter(): BasePresenter<out MvpView>? {
         return presenter
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if(requestCode == ViewConstants.REQUES_CODE_DETAIL){
+            presenter.requestProjects()
+        }
     }
 }

@@ -38,6 +38,12 @@ class ProjectDetailActivity: BaseActivity(), ProjectDetailContract.View {
         displayHomeAsUpEnabled()
 
         presenter.onOpen(project)
+
+        addEvents()
+    }
+
+    private fun addEvents() {
+        fabStarred.setOnClickListener { presenter.onClickStar(project) }
     }
 
     override fun refreshView() {
@@ -57,6 +63,8 @@ class ProjectDetailActivity: BaseActivity(), ProjectDetailContract.View {
         textViewDate.text = getString(R.string.date_range,
                 project.startDate?.formatToViewDateDefaults(),
                 project.endDate?.formatToViewDateDefaults())
+
+        refreshStar()
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
@@ -74,6 +82,18 @@ class ProjectDetailActivity: BaseActivity(), ProjectDetailContract.View {
             intent.putExtra(ViewConstants.EXTRA_PROJECT, project)
 
             return intent
+        }
+    }
+
+    override fun setProject(project: Project) {
+        this.project = project
+    }
+
+    override fun refreshStar() {
+        if(project.starred == true){
+            fabStarred.setImageResource(R.drawable.ic_star_yellow_24dp)
+        }else{
+            fabStarred.setImageResource(R.drawable.ic_star_white_24dp)
         }
     }
 }
