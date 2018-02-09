@@ -13,6 +13,7 @@ import com.teamwork.sample.maicon.util.extension.formatToViewDateDefaults
 import kotlinx.android.synthetic.main.activity_project_detail.*
 import javax.inject.Inject
 
+
 /**
  * Created on 08/02/2018.
  */
@@ -26,11 +27,13 @@ class ProjectDetailActivity: BaseActivity(), ProjectDetailContract.View {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_project_detail)
+        this.project = intent.getParcelableExtra(ViewConstants.EXTRA_PROJECT)
+
+        setSupportActionBar(toolbar)
+        collapsing_toolbar.title = project.name
 
         activityComponent.inject(this)
         presenter.attachView(this)
-
-        this.project = intent.getParcelableExtra(ViewConstants.EXTRA_PROJECT)
 
         displayHomeAsUpEnabled()
 

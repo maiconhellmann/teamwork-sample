@@ -29,9 +29,10 @@
             </intent-filter>
         </activity>
 
+
         <!--Project Detail-->
         <activity android:name=".ui.project.detail.ProjectDetailActivity"
-            android:theme="@style/BaseAppTheme"
+            android:theme="@style/BaseAppThemeNoActionBar"
             android:screenOrientation="portrait"/>
 
     </application>
